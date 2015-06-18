@@ -2,18 +2,21 @@ require 'opal'
 require 'opal-jquery'
 
 Document.ready? do
-  list, form = Document.find('#list'), Document.find('#form')
+  list = Document.find('#list')
+  form = Document.find('#form')
   text_box = form.find('input')
 
   form.on(:submit) do |event|
     event.prevent
 
-    item = Element.new('li')
-    item.text = text_box.value
+    item = Element.new('div.row')
+    item.html = "<div class='card'>"\
+                "<p>#{text_box.value}</p>"\
+                "</div>"
     item.on(:click) { item.remove }
+    list.append(item)
 
     text_box.value = ''
 
-    list.append(item)
   end
 end

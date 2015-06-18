@@ -23,5 +23,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  opal
-  opal-jquery
+  opal (= 0.7.2)
+  opal-jquery (= 0.3.0)

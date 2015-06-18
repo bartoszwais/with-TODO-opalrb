@@ -15407,22 +15407,22 @@ Opal.modules["opal-jquery"] = function(Opal) {
   Opal.dynamic_require_severity = "error";
   var $a, $b, TMP_1, self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice;
 
-  Opal.add_stubs(['$require', '$ready?', '$[]', '$find', '$on', '$prevent', '$new', '$text=', '$value', '$remove', '$value=', '$append']);
+  Opal.add_stubs(['$require', '$ready?', '$find', '$on', '$prevent', '$new', '$html=', '$value', '$remove', '$append', '$value=']);
   self.$require("opal");
   self.$require("opal-jquery");
   return ($a = ($b = $scope.get('Document'))['$ready?'], $a.$$p = (TMP_1 = function(){var self = TMP_1.$$s || this, $a, $b, TMP_2, list = nil, form = nil, text_box = nil;
 
-  list = $scope.get('Document')['$[]']("#list");
+  list = $scope.get('Document').$find("#list");
     form = $scope.get('Document').$find("#form");
     text_box = form.$find("input");
     return ($a = ($b = form).$on, $a.$$p = (TMP_2 = function(event){var self = TMP_2.$$s || this, $a, $b, TMP_3, $c, item = nil;
 if (event == null) event = nil;
     event.$prevent();
-      item = $scope.get('Element').$new("li");
-      (($a = [text_box.$value()]), $b = item, $b['$text='].apply($b, $a), $a[$a.length-1]);
+      item = $scope.get('Element').$new("div.row");
+      (($a = ["<div class='card'>" + ("<p>" + (text_box.$value()) + "</p>") + "</div>"]), $b = item, $b['$html='].apply($b, $a), $a[$a.length-1]);
       ($a = ($b = item).$on, $a.$$p = (TMP_3 = function(){var self = TMP_3.$$s || this;
 
       return item.$remove()}, TMP_3.$$s = self, TMP_3), $a).call($b, "click");
-      (($a = [""]), $c = text_box, $c['$value='].apply($c, $a), $a[$a.length-1]);
-      return list.$append(item);}, TMP_2.$$s = self, TMP_2), $a).call($b, "submit");}, TMP_1.$$s = self, TMP_1), $a).call($b);
+      list.$append(item);
+      return (($a = [""]), $c = text_box, $c['$value='].apply($c, $a), $a[$a.length-1]);}, TMP_2.$$s = self, TMP_2), $a).call($b, "submit");}, TMP_1.$$s = self, TMP_1), $a).call($b);
 })(Opal);
