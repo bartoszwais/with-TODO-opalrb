@@ -10,10 +10,9 @@ Document.ready? do
     event.prevent
 
     item = Element.new('div.row')
-    item.html = "<div class='card'>"\
-                "<p>#{text_box.value}</p>"\
-                "</div>"
+    item.html = "<div class='card'><p>#{text_box.value}</p></div>"
     item.on(:click) { item.remove }
+
     list.append(item)
 
     text_box.value = ''

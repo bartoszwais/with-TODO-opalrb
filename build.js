@@ -15419,7 +15419,7 @@ Opal.modules["opal-jquery"] = function(Opal) {
 if (event == null) event = nil;
     event.$prevent();
       item = $scope.get('Element').$new("div.row");
-      (($a = ["<div class='card'>" + ("<p>" + (text_box.$value()) + "</p>") + "</div>"]), $b = item, $b['$html='].apply($b, $a), $a[$a.length-1]);
+      (($a = ["<div class='card'><p>" + (text_box.$value()) + "</p></div>"]), $b = item, $b['$html='].apply($b, $a), $a[$a.length-1]);
       ($a = ($b = item).$on, $a.$$p = (TMP_3 = function(){var self = TMP_3.$$s || this;
 
       return item.$remove()}, TMP_3.$$s = self, TMP_3), $a).call($b, "click");
