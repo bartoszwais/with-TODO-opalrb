@@ -12,12 +12,26 @@
           margin-right: auto;
           width: 70%;
       }
+      #content {
+          position: relative;
+      }
+      #content > div {
+        border:1px solid red;
+        background-color: Red;
+        padding:2em;
+        border-radius:50%;
+        display:inline;
+        position: absolute;
+        right:20%;
+        top: 50%;
+        
+      }
     </style>
   </head>
   <body>
     <div id="app" class="center">
         <header>
-            <h1>Example app</h1>
+            <h1>Example &quot;Tap&quot; app</h1>
         </header>
         <div class='row'>
             <div class='one-fourth'>
@@ -26,12 +40,11 @@
                 <input id="input" placeholder="Enter text..."/>
               </form>
             </div>
-            <div class='three-fourth'>
+            <div id='content' class='three-fourth'>
                 <h2>Content</h2>
             </div>
 
         </div>
-      <hr/>
       <section id="list">
       </section>
     </div>
