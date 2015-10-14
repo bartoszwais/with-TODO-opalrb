@@ -9,6 +9,11 @@ class Content
         active_dot.add_class 'dot'
         active_dot.html = 'Tap'
 
+        active_dot.on(:click) { |event|
+            event.prevent
+            Element.find('.dot').animate({right: '80%'})
+        }
+
         content.append(active_dot)
     end
 end

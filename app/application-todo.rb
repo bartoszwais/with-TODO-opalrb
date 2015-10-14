@@ -13,10 +13,6 @@ class TODO
         }
         list.append(button_send_list_to_email)
 
-        Element.find('.dot').on(:click) { |event|
-            event.prevent
-            Element.find('.dot').animate({right: '80%'})
-        }
 
         form.on(:submit) do |event|
             event.prevent
